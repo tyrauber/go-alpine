@@ -1,0 +1,14 @@
+{
+  "name": "go-alpine",
+  "version": "0.0.1",
+  "license": "Apache",
+  "private": "true",
+  "scripts": {
+    "image:build": "docker buildx build . -t tyrauber/go-alpine",
+    "image:start": "docker run -d --name go-alpine -p 8080:8080 tyrauber/go-alpine",
+    "image:ssh": "docker exec --interactive --tty go-alpine /bin/bash"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
